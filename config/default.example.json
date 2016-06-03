@@ -1,0 +1,19 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/shareitApi",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "..."
+    },
+    "local": {},
+    "facebook": {
+      "clientID": "facebook client id",
+      "clientSecret": "facebook client secret",
+      "permissions": {
+        "scope": ["public_profile","email"]
+      }
+    }
+  }
+}

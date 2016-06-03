@@ -1,0 +1,62 @@
+{
+  "name": "shareit-api",
+  "description": "The API for the shareit app",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src/",
+  "keywords": [
+    "feathers"
+  ],
+  "license": "MIT",
+  "repository": {},
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "scripts": {
+    "clean": "npm run rm -rf ./lib",
+    "eslint": "npm run eslint ./src",
+    "test": "npm run jshint && && npm run eslint && npm run mocha",
+    "jshint": "jshint src/. test/. --config",
+    "transpile": "babel ./src --watch --presets es2015,stage-0 --plugins add-module-exports --out-dir ./lib",
+    "start": "iron-node ./lib/index.js && npm run transpile",
+    "mocha": "mocha test/ --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "compression": "^1.6.2",
+    "cors": "^2.7.1",
+    "feathers": "^2.0.1",
+    "feathers-authentication": "^0.7.7",
+    "feathers-configuration": "^0.2.3",
+    "feathers-errors": "^2.2.0",
+    "feathers-hooks": "^1.5.4",
+    "feathers-mongoose": "^3.3.7",
+    "feathers-rest": "^1.4.1",
+    "feathers-socketio": "^1.4.1",
+    "mongoose": "^4.4.19",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-facebook-token": "^3.2.0",
+    "serve-favicon": "^2.3.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^2.11.1",
+    "eslint-config-johnnyji": "^0.1.6",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-react": "^5.1.1",
+    "iron-node": "^3.0.5",
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3",
+    "request": "^2.72.0"
+  }
+}
