@@ -16,7 +16,7 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    "clean": "npm run rm -rf ./lib",
+    "clean": "rm -rf ./lib",
     "eslint": "npm run eslint ./src",
     "test": "npm run jshint && && npm run eslint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
