@@ -1,17 +1,28 @@
 import hooks from './hooks';
 import service from 'feathers-mongoose';
-import User from './user_model';
+import UserModel from './user_model';
 
 export default function() {
   const app = this;
 
   // The User service options
   const options = {
-    Model: User,
-    paginate: {
-      default: 5,
-      max: 25
-    }
+    Model: UserModel,
+    // paginate: {
+    //   // When limit is present, instead of returning an array, the query will
+    //   // instead return an object containing:
+    //   // {
+    //   //   "total": "<total number of records>",
+    //   //   "limit": "<max number of items per page>",
+    //   //   "skip": "<number of skipped items (offset)>",
+    //   //   "data": [/* data */]
+    //   // }
+    //   default: 5,
+    //   // This is the maximum number of allowed items per page, even if the
+    //   // `$limit` param in the query is higher
+    //   max: 25
+    // },
+    paginate: false
   };
 
   // Initialize our service with any options it requires
