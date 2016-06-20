@@ -7,6 +7,11 @@ export default {
   email: {
     validator: (email) => isEmail(email),
     message: '{VALUE} is not a valid email'
+  },
+  
+  username: {
+    validator: (username) => isLength(username, {min: 3, max: 20}),
+    message: 'Your username should be between 3 and 20 chars'
   }
 
 };

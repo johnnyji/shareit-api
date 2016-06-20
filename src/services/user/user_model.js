@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import beautifyUnique from 'mongoose-beautiful-unqiue-validation';
+import beautifyUnique from 'mongoose-beautiful-unique-validation';
 import Validators from './validators';
 
 const Schema = mongoose.Schema;
@@ -31,6 +31,19 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, 'You forgot to enter a password']
+  },
+  location: {
+    lon: {
+      type: Number
+    },
+    lat: {
+      type: Number
+    }
+  },
+  username: {
+    type: String,
+    validate: Validators.username,
+    unique: 'Sorry, this username is taken'
   }
 }, {
   timestamps: true

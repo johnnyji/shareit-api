@@ -20,8 +20,9 @@
     "eslint": "npm run eslint ./src",
     "test": "npm run jshint && && npm run eslint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
-    "transpile": "babel ./src --watch --presets es2015,stage-0 --plugins add-module-exports --out-dir ./lib",
-    "start": "iron-node ./lib/index.js && npm run transpile",
+    "compile": "babel ./src --watch --presets es2015,stage-0 --plugins add-module-exports --out-dir ./lib",
+    "server":  "iron-node ./lib/index.js",
+    "start": "npm run compile && npm run server",
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {
