@@ -1,4 +1,5 @@
 import isEmail from 'validator/lib/isEmail';
+import isLength from 'validator/lib/isLength';
 
 // These are the custom validators used by the User model
 export default {

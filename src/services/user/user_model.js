@@ -5,6 +5,14 @@ import Validators from './validators';
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  email: {
+    type: String,
+    required: [true, 'You need to enter an email'],
+    validate: Validators.email,
+    // This string is parsed by `mongoose-beautiful-unqiue-validation`
+    // to be the unique constraint error message
+    unique: 'Sorry, this email is already taken'
+  },
   facebookId: {
     type: String
   },
@@ -15,13 +23,13 @@ const userSchema = new Schema({
     type: String,
     default: ''
   },
-  email: {
-    type: String,
-    required: [true, 'You need to enter an email'],
-    validate: Validators.email,
-    // This string is parsed by `mongoose-beautiful-unqiue-validation`
-    // to be the unique constraint error message
-    unique: 'Sorry, this email is already taken'
+  location: {
+    lon: {
+      type: Number
+    },
+    lat: {
+      type: Number
+    }
   },
   onboarded: {
     type: Boolean,
@@ -32,13 +40,10 @@ const userSchema = new Schema({
     type: String,
     required: [true, 'You forgot to enter a password']
   },
-  location: {
-    lon: {
-      type: Number
-    },
-    lat: {
-      type: Number
-    }
+  rangeInMiles: {
+    type: Number,
+    default: 50,
+    required: true
   },
   username: {
     type: String,
